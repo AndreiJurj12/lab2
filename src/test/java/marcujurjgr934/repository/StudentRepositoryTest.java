@@ -32,7 +32,7 @@ public class StudentRepositoryTest {
         assertEquals(currentStudents.get(0).getID(), student.getID());
     }
 
-    @Test
+    @Test(expected = ValidationException.class)
     public void addStudentFailure()  {
         Validator<Student> studentValidator = new StudentValidator();
         StudentRepository studentRepository = new StudentRepository(studentValidator);

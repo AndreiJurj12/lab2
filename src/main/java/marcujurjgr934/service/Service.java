@@ -9,6 +9,7 @@ import marcujurjgr934.domain.Tema;
 import marcujurjgr934.repository.NotaXMLRepository;
 import marcujurjgr934.repository.StudentXMLRepository;
 import marcujurjgr934.repository.TemaXMLRepository;
+import marcujurjgr934.validation.ValidationException;
 
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
@@ -43,7 +44,13 @@ public class Service {
 
     public int saveTema(String id, String descriere, int deadline, int startline) {
         Tema tema = new Tema(id, descriere, deadline, startline);
-        Tema result = temaXmlRepo.save(tema);
+        Tema result = null;
+        try {
+            result = temaXmlRepo.save(tema);
+        }
+        catch (ValidationException ve) {
+            return 0;
+        }
 
         if (result == null) {
             return 1;
