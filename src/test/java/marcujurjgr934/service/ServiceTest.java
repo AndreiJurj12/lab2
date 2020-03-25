@@ -16,6 +16,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.Assert.*;
 
@@ -28,13 +29,14 @@ public class ServiceTest {
         Validator<Nota> notaValidator = new NotaValidator();
 
         StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme_test.xml");
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
+        String new_id = UUID.randomUUID().toString();
 
-        int response = service.saveTema("10", "description", 7, 5);
+        int response = service.saveTema(new_id, "description", 7, 5);
         assertEquals(response, 1);
     }
 
@@ -45,13 +47,13 @@ public class ServiceTest {
         Validator<Nota> notaValidator = new NotaValidator();
 
         StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme_test.xml");
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
-
-        int response = service.saveTema("10", "description", 4, 5);
+        String new_id = UUID.randomUUID().toString();
+        int response = service.saveTema(new_id, "description", 4, 5);
         assertEquals(response, 0);
     }
 

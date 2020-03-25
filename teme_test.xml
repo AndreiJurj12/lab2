@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entitati>
+    <tema ID="48a8e7d4-3c62-4523-857b-e6a5ca409140">
+        <Descriere>description</Descriere>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </tema>
+    <tema ID="f1ac2332-48e0-4cd2-bc43-4dd83c4aeab3">
+        <Descriere>description</Descriere>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </tema>
+    <tema ID="778b37cd-5271-4fc3-9729-a588889e8804">
+        <Descriere>description</Descriere>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </tema>
+    <tema ID="10">
+        <Descriere>description</Descriere>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </tema>
+</Entitati>
